@@ -53,6 +53,15 @@ router.post('/', function(req, res, next) {
 
 router.get('/:id', function(req, res, next) {
 
+    Book.getBookById(req.params.id , (error , payload) => {
+
+        if(error)
+            return res.status(500).json({error:error})
+        else
+            return res.status(200).json({payload});
+
+
+    })
 
 });
 

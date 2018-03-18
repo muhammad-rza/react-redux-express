@@ -9,7 +9,13 @@ export function  setBooks(books) {
 
 }
 
+export function bookFetched(book) {
 
+    return {
+        type: 'BOOK_FETCHED',
+        book
+    }
+}
 
 
 export function  fetchBooks() {
@@ -22,4 +28,12 @@ export function  fetchBooks() {
 
 	}
 
+}
+
+export function fetchBook(id) {
+    return dispatch => {
+        fetch(`/books/${id}`)
+            .then(res => res.json())
+            .then(data => dispatch(bookFetched(data.payload)));
+    }
 }

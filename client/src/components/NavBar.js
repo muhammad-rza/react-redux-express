@@ -2,6 +2,8 @@ import React , {Component} from 'react';
 
 import { Link } from 'react-router-dom';
 
+import Basket from './Basket/Basket'
+
 export default class NavBar extends  Component {
 
     render() {
@@ -33,16 +35,7 @@ export default class NavBar extends  Component {
                     </ul>
                     
                     <div className="mr-5">
-                    <div className="dropdown">
-                        <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Cart (1)
-                        </button>
-                        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            // <a className="dropdown-item" href="#">Action</a>
-                            // <a className="dropdown-item" href="#">Another action</a>
-                            // <a className="dropdown-item" href="#">Something else here</a>
-                        </div>
-                        </div>
+                        <Basket />
                     </div>
 
                     <form  className="form-inline my-2 my-lg-0">

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import AddToCartBtn from '../buttons/AddToCartBtn'
 
 
 export default function CardsList({ book }) {
@@ -16,8 +16,8 @@ export default function CardsList({ book }) {
 					<p className="card-text">{book.short_desc}</p>
 					<div className="mr-2" role="group" aria-label="Second group">
 
-					<button className="btn btn-success" book={book}>Add to cart</button>
-			{/* <button href="#" className="btn btn-danger" book={book}>Remove from cart</button> */}
+					<AddToCartBtn book={ book } />
+
 			</div>
 
 			</div>

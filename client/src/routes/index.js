@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BrowserRouter , Route} from 'react-router-dom';
+import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom'
 
 import Index from  '../pages/Index';
 import CardDetail from  '../pages/CardDetail';
@@ -8,21 +8,12 @@ import CardDetail from  '../pages/CardDetail';
 export default ()=> (
 
 	<BrowserRouter>
-		<Route path="/" component={Index}>
 
-			<Route path='/book/:bookId' component={CardDetail} />
-
-		</Route>
-
+		<Switch>
+			<Route path="/" component={Index} exact={true}/>
+			<Route path={"/book/:_id"} component={CardDetail} />
+		</Switch>
 
 	</BrowserRouter>
 
 )
-
-
-
-// <Match pattern="/users" children={() => [
-// <Match key="1" pattern="create" component={CreateUser}/>,
-// <Match key="2" pattern="delete" component={DeleteUser}/>
-// ]}/>
-//

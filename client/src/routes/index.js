@@ -1,17 +1,15 @@
 import React from 'react';
 
-import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom'
 
-import Index from  '../pages/Index';
-import CardDetail from  '../pages/CardDetail';
+import { BrowserRouter, Switch, Route} from 'react-router-dom';
 
-export default ()=> (
+import routeList from './routeList';
+
+export default ({match})=> (
 
 	<BrowserRouter>
-
 		<Switch>
-			<Route path="/" component={Index} exact={true}/>
-			<Route path={"/book/:_id"} component={CardDetail} />
+			{routeList.map((route ,index) => <Route key={index} {...route} /> ) }
 		</Switch>
 
 	</BrowserRouter>

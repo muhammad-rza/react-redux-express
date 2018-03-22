@@ -1,21 +1,18 @@
-import React, { Component } from 'react';
-import '../App.css';
+import React from  'react';
 
-import NavBar from '../components/NavBar';
-import Carousel from '../components/Carousel';
-import Cards from '../components/Card/Cards';
+// import { fetchAllBook } from 'redux/actions/bookAction';
 
+// import { connect } from 'react-redux';
+import NavContainer from '../containers/Nav/Nav';
+import CarouselContainer from '../containers/Carousel/Carousel';
+import CardContainer from '../containers/Card/CardList';
 
-class App extends Component {
-	render() {
-		return (
-			<div className="App">
-			<NavBar />
-			<Carousel />
-			<Cards />
+export default ()=>(
+
+         	<div>
+				<NavContainer />
+				<CarouselContainer />
+				<CardContainer />
 			</div>
-	);
-	}
-}
 
-export default App;
+		);
